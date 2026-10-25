@@ -1,0 +1,15 @@
+# Ambiente Python e caches
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Arquivos com configurações privadas
+.env
+.env.*
+!.env.example
+
+# Dados e resultados gerados
+dados/brutos/
+dados/processados/
+resultados/
