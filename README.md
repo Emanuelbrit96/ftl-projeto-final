@@ -129,6 +129,75 @@ A correlação de Spearman entre o indicador de rendimento e a proporção da po
 - [Faixas de distância da população de Salvador](resultados/tabelas/faixas_distancia_salvador.csv)
 - [Gráfico de rendimento e cobertura em até 20 minutos](resultados/graficos/renda_e_cobertura_ubs_usf.png)
 
+
+## Mapa interativo
+
+A página interativa permite explorar os resultados por Prefeitura-Bairro:
+
+- seleção de região com destaque, zoom e painel de indicadores;
+- localização das 45 UBS e 97 USF, com símbolos diferentes e filtros;
+- limites opcionais dos 171 bairros, com nome e região associada;
+- localização e endereço das dez sedes das Prefeituras-Bairro;
+- legenda dos símbolos e avisos metodológicos.
+
+Os indicadores são regionais. A camada de bairros não apresenta
+estimativas calculadas por bairro.
+
+### Preparação dos dados
+
+O script Python lê as bases geográficas e o CSV regional revisado,
+valida os dados, associa bairros e unidades às regiões e exporta
+os arquivos consumidos pela página.
+
+Na raiz do projeto, execute:
+
+```bash
+uv sync
+uv run python src/preparar_dados_mapa.py
+```
+
+Os arquivos de entrada precisam estar nos caminhos definidos no script.
+Os dados brutos não estão incluídos no repositório.
+
+### Executar o mapa localmente
+
+Com os arquivos exportados disponíveis em `site/mapa/dados/`, execute
+na raiz do projeto:
+
+```bash
+uv run python -m http.server 8000 --bind 127.0.0.1 --directory site
+```
+
+Abra **http://localhost:8000/mapa/** no navegador.
+Para encerrar o servidor, pressione **Ctrl + C** no terminal.
+
+### Organização
+
+| Arquivo ou pasta | Função |
+|---|---|
+| `src/preparar_dados_mapa.py` | Preparação, validação e exportação dos dados em Python. |
+| `site/mapa/index.html` | Estrutura da página. |
+| `site/mapa/mapa.css` | Aparência e layout responsivo. |
+| `site/mapa/app.js` | Carregamento dos arquivos e interações com Leaflet. |
+| `site/mapa/dados/` | GeoJSONs e JSON de indicadores exportados pelo Python. |
+
+A página não possui backend e não recalcula rotas durante a navegação.
+Os dados são carregados dos arquivos exportados; a biblioteca Leaflet
+é carregada por CDN e requer conexão com a internet.
+
+### Limitações específicas do mapa
+
+- As cores das Prefeituras-Bairro apenas identificam os territórios.
+- A associação dos bairros usa a maior área de sobreposição com cada
+  Prefeitura-Bairro, preservando os polígonos originais.
+- A base de UBS e USF possui metadados de 2021; o funcionamento atual
+  das unidades não foi verificado.
+- A base das sedes apresenta divergência no número do endereço de
+  Liberdade/São Caetano. O pop-up mantém os campos originais e sinaliza
+  a pendência de confirmação.
+
+
+
 ## Tecnologias utilizadas
 
 - Python 3.10 ou superior;
