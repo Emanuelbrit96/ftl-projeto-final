@@ -131,8 +131,9 @@ A correlação de Spearman entre o indicador de rendimento e a proporção da po
 
 
 ## Mapa interativo
+🗺️ **[Explorar o mapa interativo de Salvador](https://emanuelbrit96.github.io/ftl-projeto-final/mapa/)**
 
-A página interativa permite explorar os resultados por Prefeitura-Bairro:
+A página permite consultar os indicadores das dez Prefeituras-Bairro e localizar UBS, USF e sedes administrativas.
 
 - seleção de região com destaque, zoom e painel de indicadores;
 - localização das 45 UBS e 97 USF, com símbolos diferentes e filtros;
