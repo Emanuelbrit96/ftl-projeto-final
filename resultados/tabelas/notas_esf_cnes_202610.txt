@@ -1,0 +1,25 @@
+Equipes de Saúde da Família — CNES, competência 202610
+
+Foram identificadas 392 equipes distintas do tipo 70, ativadas até
+31/10/2026 e sem desativação até essa data, conforme o cadastro consultado.
+A situação cadastral não comprova funcionamento efetivo, composição
+profissional completa ou atendimento realizado.
+
+As equipes estão vinculadas a 119 estabelecimentos. Pelas coordenadas
+do CNES, 116 estabelecimentos e 383 equipes foram associados a uma
+Prefeitura-Bairro. Três estabelecimentos, reunindo nove equipes,
+permanecem com localização pendente. Não foram corrigidas coordenadas.
+
+Os indicadores regionais são preliminares e excluem essas nove equipes.
+Essa exclusão reduz a razão de equipes por habitante e aumenta a razão
+de população por equipe nas regiões às quais elas eventualmente pertençam.
+
+O denominador é a população estimada no recorte das Prefeituras-Bairro,
+derivada do Censo 2022. Portanto, há diferença temporal entre população
+e cadastro de equipes.
+
+População estimada por equipe é uma razão regional, não população
+cadastrada, atendida ou cobertura assistencial.
+
+Esta etapa não substituiu nem atualizou integralmente a base anterior
+de 142 UBS/USF e não recalculou as distâncias ou o mapa publicado.
